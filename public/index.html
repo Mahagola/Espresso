@@ -4,37 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <title>Espresso</title>
 </head>
 <body>
-    <h1>Hellow There!!</h1>
+    <h1 class="title">Hellow There!!</h1>
     <div class="main">
         <div class="name">
             <span>
                 <i class = "far fa-user"></i>
-                <input type="text" id="name-input" class="name-input" value="anonymous" maxlength="20">
             </span>
+            <input type="text" id="name-input" class="name-input" value="anonymous" maxlength="20">
         </div>
         <ul class="message-container" id="message-container">
             <li class="message-left">
                 <p class="message">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident, aliquam? Praesentium fugit voluptas ipsam. Ullam, animi. Iure voluptatum, eum deleniti recusandae nobis illum eligendi ut ullam aut reprehenderit cumque provident?
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                     <span>Rei 23 Jul 20:55</Label></span>
                 </p>
             </li>
             <li class="message-right">
                 <p class="message">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident, aliquam? Praesentium fugit voluptas ipsam. Ullam, animi. Iure voluptatum, eum deleniti recusandae nobis illum eligendi ut ullam aut reprehenderit cumque provident?
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
                     <span>Rei 23 Jul 20:55</Label></span>
                 </p>
             </li>
             <li class="message-feedback">
-                <p class="feedback" id="feedback"></p>
+                <p class="feedback" id="feedback">xyz is typing a message</p>
             </li>
-            <form action="" class="message-form" id="message-form">
-                <input type="text" name="message" id="message-input" class="message-input">
-            </form>
         </ul>
+        <form class="message-form" id="message-form">
+            <input type="text" name="message" id="message-input" class="message-input">
+            <div class="v-divider"></div>
+            <button type="button" class="send-message">
+                send <span><i class="fas fa-paper-plane"></i></span>
+            </button>
+        </form>
     </div>
+    <h3 class="clients-total" id="clients-total">Total Clients : 2</h3>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
