@@ -10,7 +10,7 @@ io.on('connection', onConnected )
 
 let socketsConnected = new Set()
 function onConnected(socket){
-    console.log(socket.id)
+    console.log('sockets connected : ', socket.id)
     socketsConnected.add(socket.id)
     io.emit('clients-total', socketsConnected.size)
 
@@ -20,5 +20,10 @@ function onConnected(socket){
         io.emit(
             'clients-total' , socketsConnected.size
         )
+    })
+
+    socket.on('message',(data)=>{
+        console.log(data);
+        socket.broadcast.emit('chat-message', data);
     })
 }
